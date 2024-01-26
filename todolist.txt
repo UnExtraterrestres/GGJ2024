@@ -1,0 +1,6 @@
+- personnage principal
+- moqueur (qui vole au dessus du PJ)
+- boîte de dialogue
+- 1 niveau minimum
+- 2 dialogues minimum
+- 1 obstacle minimum
