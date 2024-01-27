@@ -10,13 +10,10 @@ class TitleScene(CustomScene):
 
     def do_when_added(self):
         self.root.add_child(bf.Image("assets/sprites/bg1.jpg"))
-        title = bf.Label("Make it").set_text_size(28)
-        self.root.add_child(title)
-        title.set_center(*self.hud_camera.rect.move(0,40).midtop)
-        title2 = bf.Label("BLOOM").set_text_size(36)
+        title2 = bf.Label("Oeuf-au-riz").set_text_size(36).set_y(100)
         self.root.add_child(title2)
         title2.set_text_color("yellow")
-        title2.set_center(*title.rect.move(0,20).midbottom)
+        title2.add_constraints(bf.ConstraintCenterX())
 
 
 

@@ -4,7 +4,7 @@ from .customScene import CustomScene
 
 
 def load_credits():
-    filepath = bf.ResourceManager().get_path("assets/credits.txt")
+    filepath = bf.ResourceManager().get_path("assets/intro.txt")
     res = []
     try:
         with open(filepath, 'r') as file:
@@ -14,11 +14,11 @@ def load_credits():
         return res
 
 
-class CreditScene(CustomScene):
+class IntroScene(CustomScene):
 
     def __init__(self):
-        super().__init__("credits")
-        self.set_clear_color(bf.color.CLOUD_WHITE)
+        super().__init__("intro")
+        self.set_clear_color(bf.color.DARK_BLUE)
 
     def do_when_added(self):
         # fond
@@ -28,15 +28,9 @@ class CreditScene(CustomScene):
         self.root.add_child(bf.Debugger())
 
         # écriture des crédits
-        labels = []
-        for line in load_credits()[:10]:
+        labels = [bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()).set_text_color(bf.color.CLOUD_WHITE).set_color(bf.color.DARK_BLUE) for line in load_credits()]
 
-            labels.append(bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()))
-            labels.append(
-                bf.Label("Chuck Norris").set_padding((0, 0, 0, 30)).set_text_size(10).add_constraints(bf.ConstraintCenterX()).set_text_color(bf.color.RIVER_BLUE)
-            )
-
-        container = bf.Container(bf.Column(10), *labels).add_constraints(bf.ConstraintCenterX())
+        container = bf.Container(bf.Column(40), *labels).add_constraints(bf.ConstraintCenterX())
         self.root.add_child(container)
 
         self.add_actions(bf.Action("EchapScene").add_key_control(pygame.K_ESCAPE))

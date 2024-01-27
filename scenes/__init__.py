@@ -7,3 +7,4 @@ from .level import *
 from .customScene import CustomScene
 from .game_constants import GameConstants as gconst
 from .creditScene import CreditScene
+from .introScene import IntroScene
