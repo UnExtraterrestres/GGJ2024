@@ -22,20 +22,27 @@ class Level(bf.Entity):
     def convert_from_grid(self,x,y)->int:
         return y * self.height + x
 
-    def set_tile(self,x,y,tile)->bool:
+    def set_tile(self,x,y,tile_data:dict)->bool:
+        if self.is_out_of_bounds(x,y):return False
         i = self.convert_from_grid(x,y)
-        if i<0 or i>=len(self.tiles):return False
+        tile =Tile().from_json(tile_data)
         self.tiles[i] = tile
         tile.set_position(x*gconst.TILE_SIZE,y*gconst.TILE_SIZE)
         return True
 
     def is_out_of_bounds(self,x,y)->bool:
-        i = self.convert_from_grid(x,y)
-        return  i<0 or i>=len(self.tiles)   
+        return  y <0 or y>=self.height or x<0 or x >= self.width     
 
     def get_tile(self,x,y)->Tile|None:
         if self.is_out_of_bounds(x,y):return None
         return self.tiles[self.convert_from_grid(x,y)]                
+
+
+    def remove_tile(self,x,y)->bool:
+        if self.is_out_of_bounds(x,y):return False
+        self.tiles[self.convert_from_grid(x,y)] = None
+        return True
+        
 
     def get_neighboring(self,x,y)->list:
         res = []
@@ -49,6 +56,9 @@ class Level(bf.Entity):
             "size":(self.width,self.height),
             "tiles":[t.to_json() for t in self.tiles]
         }
+
+    def convert_world_to_grid(self,x,y)->tuple[int,int]:
+        return int(x//gconst.TILE_SIZE),int(y//gconst.TILE_SIZE)
     
     def draw(self,camera):
         l = [t.custom_draw(camera) for t in self.tiles if t and camera.intersects(t.rect)]
