@@ -1,6 +1,7 @@
 import batFramework as bf
 import pygame
 from .customScene import CustomScene
+from random import randint
 
 
 def load_credits():
@@ -12,6 +13,18 @@ def load_credits():
         return res
     except FileNotFoundError:
         return res
+
+
+def author():
+
+    potential_authors = [
+        "Léo Vandrepol",
+        "Baturay Turan",
+        "Willfrid Foucon",
+        "Chuck Norris"
+    ]
+
+    return potential_authors[randint(0, len(potential_authors))-1]
 
 
 class CreditScene(CustomScene):
@@ -29,11 +42,11 @@ class CreditScene(CustomScene):
 
         # écriture des crédits
         labels = []
-        for line in load_credits()[:10]:
+        for line in load_credits()[:]:
 
             labels.append(bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()))
             labels.append(
-                bf.Label("Chuck Norris").set_padding((0, 0, 0, 30)).set_text_size(10).add_constraints(bf.ConstraintCenterX()).set_text_color(bf.color.RIVER_BLUE)
+                bf.Label(author()).set_padding((0, 0, 0, 30)).set_text_size(10).add_constraints(bf.ConstraintCenterX()).set_text_color(bf.color.RIVER_BLUE)
             )
 
         container = bf.Container(bf.Column(10), *labels).add_constraints(bf.ConstraintCenterX())

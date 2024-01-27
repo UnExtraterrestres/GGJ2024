@@ -18,7 +18,7 @@ class IntroScene(CustomScene):
 
     def __init__(self):
         super().__init__("intro")
-        self.set_clear_color(bf.color.DARK_BLUE)
+        self.set_clear_color((10, 10, 10))
 
     def do_when_added(self):
         # fond
@@ -28,15 +28,15 @@ class IntroScene(CustomScene):
         self.root.add_child(bf.Debugger())
 
         # écriture des crédits
-        labels = [bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()).set_text_color(bf.color.CLOUD_WHITE).set_color(bf.color.DARK_BLUE) for line in load_credits()]
+        labels = [bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()).set_text_color((255, 255, 0)).set_color((10, 10, 10)) for line in load_credits()]
 
-        container = bf.Container(bf.Column(40), *labels).add_constraints(bf.ConstraintCenterX())
+        container = bf.Container(bf.Column(40), *labels).add_constraints(bf.ConstraintCenterX()).set_y(500)
         self.root.add_child(container)
 
         self.add_actions(bf.Action("EchapScene").add_key_control(pygame.K_ESCAPE))
 
     def do_update(self, dt):
         # défiler la caméra
-        self.hud_camera.move_by(0, 63*dt)
+        self.hud_camera.move_by(0, 1)
         if self.actions.is_active("EchapScene"):
             self.manager.set_scene("title")
