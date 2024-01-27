@@ -2,17 +2,8 @@ import batFramework as bf
 import pygame
 from .game_constants import GameConstants as gconst
 from typing import Self
-class Tile(bf.Entity):
-    def __init__(self):
-        super().__init__((gconst.TILE_SIZE,gconst.TILE_SIZE))
-        self.set_tileset_index(0,0)
+from .tile import Tile
 
-    def set_tileset_index(self,x,y)->Self:
-        self.tileset_position = x,y
-        self.surface = bf.Tileset.get_tileset("main").get_tile(x,y)
-        return self
-    def custom_draw(self,camera)->tuple:
-        return self.surface,camera.transpose(self.rect)
 
 class Level(bf.Entity):
     def __init__(self,width=20,height=None):
@@ -22,10 +13,11 @@ class Level(bf.Entity):
         self.width = width
         self.tiles = [None for _ in range(width*height)]
 
+    def get_bounding_box(self):
+        yield pygame.Rect(*self.rect.topleft,gconst.TILE_SIZE*self.width,gconst.TILE_SIZE*self.height)
 
     def get_drawn_tiles(self)->list:
         return [t for t in self.tiles if t is not None]
-
 
     def convert_from_grid(self,x,y)->int:
         return y * self.height + x
@@ -37,7 +29,27 @@ class Level(bf.Entity):
         tile.set_position(x*gconst.TILE_SIZE,y*gconst.TILE_SIZE)
         return True
 
+    def is_out_of_bounds(self,x,y)->bool:
+        i = self.convert_from_grid(x,y)
+        return  i<0 or i>=len(self.tiles)   
 
+    def get_tile(self,x,y)->Tile|None:
+        if self.is_out_of_bounds(x,y):return None
+        return self.tiles[self.convert_from_grid(x,y)]                
+
+    def get_neighboring(self,x,y)->list:
+        res = []
+        for h in [-1,0,1]:
+            for v in [-1,0,1]:
+                res.append(self.get_tile(x+h,y+v))
+        return res
+
+    def to_json(self)->dict:
+        return {
+            "size":(self.width,self.height),
+            "tiles":[t.to_json() for t in self.tiles]
+        }
+    
     def draw(self,camera):
         l = [t.custom_draw(camera) for t in self.tiles if t and camera.intersects(t.rect)]
         camera.surface.fblits(l)
