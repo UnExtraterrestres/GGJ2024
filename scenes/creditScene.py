@@ -56,6 +56,8 @@ class CreditScene(CustomScene):
         self.timer = bf.Timer(0.9, loop=True, end_callback=lambda:  self.container.children.pop(0) if self.container.children else None).start()
         self.timer.pause()
 
+        self.root.children[0]
+
     def do_on_enter(self):
         pass
         # self.timer.resume()

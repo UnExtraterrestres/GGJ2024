@@ -25,4 +25,4 @@ m = bf.Manager(
     scenes.PauseScene()
 )
 # m.run()
-cProfile.run('m.run()',sort="time")
+cProfile.run('m.run()', sort="time")
