@@ -1,0 +1,1080 @@
+{
+  "size": [
+    20,
+    20
+  ],
+  "tiles": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "position": [
+        0.0,
+        160.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "position": [
+        608.0,
+        160.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        0.0,
+        192.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "position": [
+        608.0,
+        192.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        0.0,
+        224.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "position": [
+        608.0,
+        224.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        0.0,
+        256.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "position": [
+        608.0,
+        256.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        0.0,
+        288.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "position": [
+        608.0,
+        288.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        0.0,
+        320.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    {
+      "position": [
+        96.0,
+        320.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "position": [
+        288.0,
+        320.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    {
+      "position": [
+        416.0,
+        320.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    {
+      "position": [
+        512.0,
+        320.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    {
+      "position": [
+        608.0,
+        320.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        0.0,
+        352.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    {
+      "position": [
+        128.0,
+        352.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    {
+      "position": [
+        256.0,
+        352.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    {
+      "position": [
+        384.0,
+        352.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    {
+      "position": [
+        480.0,
+        352.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    {
+      "position": [
+        608.0,
+        352.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        0.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        32.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        64.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        96.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        128.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        160.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        192.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        224.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        256.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        288.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        320.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        352.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        384.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        416.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        448.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        480.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        512.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        544.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        576.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    {
+      "position": [
+        608.0,
+        384.0
+      ],
+      "index": [
+        6,
+        0
+      ],
+      "tags": [
+        "collider"
+      ],
+      "flip": [
+        false,
+        false
+      ]
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}

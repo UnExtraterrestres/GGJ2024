@@ -1,3 +1,4 @@
+import cProfile
 import batFramework as bf
 import pygame
 import scenes
@@ -8,13 +9,13 @@ bf.init(
     default_text_size=16,
     resource_path='data',
     default_font="fonts/p2p.ttf",
-    fps_limit=60,
+    fps_limit=0,
     window_title="Coin Coin"
     )
 
 bf.Tileset.load_tileset("assets/tilesets/tileset.png", "main", scenes.gconst.TILE_SIZE)
 
-bf.Manager(
+m = bf.Manager(
     scenes.TitleScene(),
     scenes.CreditScene(),
     scenes.MainScene(),
@@ -22,4 +23,6 @@ bf.Manager(
     scenes.DialogueScene(),
     scenes.IntroScene(),
     scenes.PauseScene()
-).run()
+)
+# m.run()
+cProfile.run('m.run()',sort="time")

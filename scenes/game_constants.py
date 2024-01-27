@@ -3,6 +3,6 @@ import pygame
 
 class GameConstants:
 
-    GRAVITY = 800
-    FRICTION = 0.8
+    GRAVITY = 2000
+    FRICTION = 0.5
     TILE_SIZE = 32

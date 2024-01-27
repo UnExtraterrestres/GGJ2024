@@ -46,16 +46,21 @@ class Level(bf.Entity):
 
     def get_neighboring(self,x,y)->list:
         res = []
-        for h in [-1,0,1]:
-            for v in [-1,0,1]:
+        for h in [-2,-1,0,1,2]:
+            for v in [-2,-1,0,1,2]:
                 res.append(self.get_tile(x+h,y+v))
         return res
+
 
     def to_json(self)->dict:
         return {
             "size":(self.width,self.height),
-            "tiles":[t.to_json() for t in self.tiles]
+            "tiles":[t.to_json() if t is not None else None for t in self.tiles ]
         }
+
+    def from_json(self,data:dict):
+        self.width,self.height = data["size"]
+        self.tiles =[Tile().from_json(d) if d is not None else None for d in  data["tiles"]]
 
     def convert_world_to_grid(self,x,y)->tuple[int,int]:
         return int(x//gconst.TILE_SIZE),int(y//gconst.TILE_SIZE)
