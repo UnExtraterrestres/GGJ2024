@@ -11,9 +11,9 @@ bf.init(
     window_title="Coin Coin"
     )
 
-bf.Tileset.load_tileset("assets/tilesets/tileset.png","main",scenes.gconst.TILE_SIZE)
+bf.Tileset.load_tileset("assets/tilesets/tileset.png", "main", scenes.gconst.TILE_SIZE)
 
 bf.Manager(
-    scenes.MainScene(),
+    scenes.CreditScene(),
     scenes.DialogueScene()
 ).run()
