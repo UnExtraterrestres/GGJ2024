@@ -2,6 +2,7 @@ import batFramework as bf
 import pygame
 import threading
 from .customScene import CustomScene
+from random import randint
 
 
 def load_credits():
@@ -15,6 +16,12 @@ def load_credits():
         return res
 
 
+def author():
+
+
+    return potential_authors[randint(0, len(potential_authors))-1]
+
+
 class CreditScene(CustomScene):
 
     def __init__(self):
@@ -22,6 +29,7 @@ class CreditScene(CustomScene):
         self.set_clear_color(bf.color.CLOUD_WHITE)
         self.loaded_credits = load_credits()
         self.labels = []
+        self.loaded = False
 
     def do_when_added(self):
         # fond
@@ -43,21 +51,23 @@ class CreditScene(CustomScene):
         self.root.add_child(self.container)
 
         self.add_actions(bf.Action("EchapScene").add_key_control(pygame.K_ESCAPE))
-        self.timer =         bf.Timer(0.9,loop = True,end_callback = lambda :  self.container.children.pop(0) if self.container.children else None).start()
+        self.timer = bf.Timer(0.9, loop=True, end_callback=lambda:  self.container.children.pop(0) if self.container.children else None).start()
         self.timer.pause()
 
 
     def create_labels(self):
-        for line in self.loaded_credits[:90]:
+        for line in self.loaded_credits[10:100]:
 
             self.container.add_child(
                 bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()),
                 bf.Label("Chuck Norris").set_padding((0, 0, 0, 30)).set_text_size(10).add_constraints(bf.ConstraintCenterX()).set_text_color(bf.color.RIVER_BLUE)
                 )
+        self.loaded = True
 
     def do_on_enter(self):
-        thread = threading.Thread(target=lambda: self.create_labels())
-        thread.start()
+        if self.loaded is False:
+            thread = threading.Thread(target=lambda: self.create_labels())
+            thread.start()
         pass
     
 
