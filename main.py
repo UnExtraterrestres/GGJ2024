@@ -7,6 +7,7 @@ bf.init(
     pygame.SCALED,
     default_text_size=16,
     resource_path='data',
+    default_font="fonts/p2p.ttf",
     fps_limit=60,
     window_title="Coin Coin"
     )
@@ -14,6 +15,7 @@ bf.init(
 bf.Tileset.load_tileset("assets/tilesets/tileset.png","main",scenes.gconst.TILE_SIZE)
 
 bf.Manager(
+    scenes.TitleScene(),
     scenes.MainScene(),
     scenes.DialogueScene()
 ).run()
