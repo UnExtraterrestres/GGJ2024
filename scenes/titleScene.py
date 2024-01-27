@@ -25,6 +25,7 @@ class TitleScene(CustomScene):
         container.add_constraints(bf.ConstraintCenterX())
         container.add_child(
             bf.Button("Play",lambda : self.manager.set_scene("main")),
+            bf.Button("Credits", lambda : self.manager.set_scene("credits")),
             bf.Button("Quit", self.manager.stop)
         )
         
