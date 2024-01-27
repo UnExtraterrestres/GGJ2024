@@ -1,5 +1,6 @@
 import batFramework as bf
 import pygame
+import threading
 from .customScene import CustomScene
 
 
@@ -19,6 +20,8 @@ class CreditScene(CustomScene):
     def __init__(self):
         super().__init__("credits")
         self.set_clear_color(bf.color.CLOUD_WHITE)
+        self.loaded_credits = load_credits()
+        self.labels = []
 
     def do_when_added(self):
         # fond
@@ -28,30 +31,42 @@ class CreditScene(CustomScene):
         self.root.add_child(bf.Debugger())
 
         # écriture des crédits
-        labels = []
-        for line in load_credits()[:100]:
+        
+        for line in self.loaded_credits[:10]:
 
-            labels.append(bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()))
-            labels.append(
+            self.labels.append(bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()))
+            self.labels.append(
                 bf.Label("Chuck Norris").set_padding((0, 0, 0, 30)).set_text_size(10).add_constraints(bf.ConstraintCenterX()).set_text_color(bf.color.RIVER_BLUE)
             )
 
-        self.container = bf.Container(bf.Column(10), *labels).add_constraints(bf.ConstraintCenterX())
+        self.container = bf.Container(bf.Column(10), *self.labels).add_constraints(bf.ConstraintCenterX())
         self.root.add_child(self.container)
 
         self.add_actions(bf.Action("EchapScene").add_key_control(pygame.K_ESCAPE))
         self.timer =         bf.Timer(0.9,loop = True,end_callback = lambda :  self.container.children.pop(0) if self.container.children else None).start()
         self.timer.pause()
 
+
+    def create_labels(self):
+        for line in self.loaded_credits[:90]:
+
+            self.container.add_child(
+                bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()),
+                bf.Label("Chuck Norris").set_padding((0, 0, 0, 30)).set_text_size(10).add_constraints(bf.ConstraintCenterX()).set_text_color(bf.color.RIVER_BLUE)
+                )
+
     def do_on_enter(self):
+        thread = threading.Thread(target=lambda: self.create_labels())
+        thread.start()
         pass
-        # self.timer.resume()
+    
+
     def do_on_exit(self):
         self.timer.pause()
+
     def do_update(self, dt):
-        # défiler la caméra
-        speed = 2
-        self.hud_camera.move_by(0,speed *  60*dt)
+
+        self.hud_camera.move_by(0,1)
         if self.actions.is_active("EchapScene"):
             self.manager.set_scene("title")
 

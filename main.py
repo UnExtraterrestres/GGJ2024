@@ -9,7 +9,7 @@ bf.init(
     default_text_size=16,
     resource_path='data',
     default_font="fonts/p2p.ttf",
-    fps_limit=0,
+    fps_limit=60,
     window_title="Coin Coin"
     )
 
