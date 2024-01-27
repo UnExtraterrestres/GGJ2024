@@ -28,6 +28,7 @@ class Tile(bf.Entity):
 
     def to_json(self)->dict:
         return {
+            "position":self.rect.topleft,
             "index":self.tileset_position,
             "tags":self.tags,
             "flip":self.flip
@@ -38,4 +39,5 @@ class Tile(bf.Entity):
         self.tags.clear()
         self.add_tags(*data["tags"])
         self.set_flip(*data["flip"])
+        self.set_position(*data["position"])
         return self
