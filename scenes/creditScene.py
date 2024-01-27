@@ -1,4 +1,5 @@
 import batFramework as bf
+import pygame
 from .customScene import CustomScene
 
 
@@ -32,7 +33,10 @@ class CreditScene(CustomScene):
         container = bf.Container(bf.Column(40), *labels).add_constraints(bf.ConstraintCenterX())
         self.root.add_child(container)
 
+        self.add_actions(bf.Action("EchapScene").add_key_control(pygame.K_ESCAPE))
+
     def do_update(self, dt):
         # défiler la caméra
-        speed = 200
-        self.hud_camera.move_by(0, speed*dt)
+        self.hud_camera.move_by(0, 63*dt)
+        if self.actions.is_active("EchapScene"):
+            self.manager.set_scene("title")

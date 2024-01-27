@@ -15,9 +15,10 @@ bf.init(
 bf.Tileset.load_tileset("assets/tilesets/tileset.png", "main", scenes.gconst.TILE_SIZE)
 
 bf.Manager(
-    scenes.CreditScene(),
     scenes.TitleScene(),
+    scenes.CreditScene(),
     scenes.MainScene(),
-    scenes.DialogueScene()#,
-    #scenes.CreditScene()
+    scenes.DialogueScene(),
+    scenes.DialogueScene(),
+    scenes.PauseScene()
 ).run()
