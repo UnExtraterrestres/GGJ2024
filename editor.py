@@ -37,15 +37,19 @@ class EditorScene(bf.Scene):
 
         self.current_tile = Tile()
         self.level = Level()
-        self.level.set_tile(2,2,Tile().set_index(6,0))
+        self.level.set_tile(2,2,Tile().set_index(6,0).to_json())
         self.add_world_entity(self.level,self.current_tile)
         self.actions = bf.DirectionalKeyControls()
         self.add_actions(
-            bf.Action("pick").add_key_control(pygame.K_p)
+            bf.Action("pick").add_key_control(pygame.K_p),
+            bf.Action("click").add_mouse_control(1).set_holding(),
+            bf.Action("m_click").add_mouse_control(2),
+            bf.Action("right_click").add_mouse_control(3).set_holding(),
         )
         self.right_last_click : tuple[int,int] = (0,0)
         self.velocity = pygame.math.Vector2(0,0)
         self.camera_speed = 2
+        self.flip_value = 0
     def do_when_added(self):
         self.root.add_child(bf.BasicDebugger())
 
@@ -69,5 +73,23 @@ class EditorScene(bf.Scene):
 
         self.camera.move_by(*self.velocity)
         self.current_tile.set_center(*self.camera.convert_screen_to_world(*pygame.mouse.get_pos()))
+        
+        if self.actions.is_active("click"):
+            x,y = self.level.convert_world_to_grid(*self.camera.convert_screen_to_world(*pygame.mouse.get_pos()))
+            if self.level.is_out_of_bounds(x,y) : return
 
+            t = self.level.get_tile(x,y)
+
+            if t is not None and  t.to_json() == self.current_tile.to_json() : return 
+            
+            self.level.set_tile(x,y,self.current_tile.to_json())
+
+        if self.actions.is_active("right_click"):
+            x,y = self.level.convert_world_to_grid(*self.camera.convert_screen_to_world(*pygame.mouse.get_pos()))
+            if self.level.is_out_of_bounds(x,y) : return
+            self.level.remove_tile(x,y)
+
+        if self.actions.is_active("m_click"):
+            self.flip_value = (self.flip_value+1) %4
+            self.current_tile.set_flip(self.flip_value & 1,self.flip_value & 2)
 bf.Manager(EditorScene(),TilePickerScene()).run()

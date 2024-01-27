@@ -17,4 +17,4 @@ class MainScene(bf.Scene):
     def do_when_added(self):
         b = bf.Button("DIALOGUE",lambda : self.manager.set_scene("dialogue"))
         self.root.add_child(b, bf.BasicDebugger())
-        self.level.set_tile(2,2,Tile().set_index(6,0))
+        self.level.set_tile(2,2,Tile().set_index(6,0).to_json())
