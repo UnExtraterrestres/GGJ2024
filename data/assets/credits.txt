@@ -1,50 +1,28 @@
+Concepteurs de jeu
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Concepteurs du jeu
-
-Concepteurs additionnels du jeu
+Concepteurs additionnels de jeu
 
 Programmeurs
 
-Editeurs de niveau
+Éditeurs de niveau
 
 Concepteur Web
 
-Artistic Direction
+Direction artistique
 
-Graphical Search
+Recherche graphique
 
-Player Designer
+Concepteur de joueur
 
-Duck Designer
+Concepteur de canard
 
 Logo
 
 Cinématiques
 
-Illustrator
+Illustrateur
 
-Animation Designer
+Concepteur d'animation
 
 Interface
 
@@ -54,161 +32,241 @@ Décors
 
 Mini-jeu
 
-Artistic Direction
+Direction artistique
 
-Scenario concepters
+Concepteurs de scénario
 
-Scenario Writers
+Scénaristes
 
-Title Design & Conception Director
+Directeur de conception
+& de conception de titre
 
-Music Designer
+Concepteur musical
 
-Compositors
+Compositeurs
 
-Sound Design
+Conception sonore
 
-Level Designer
+Concepteur de niveau
 
-Co-producters
+Co-producteurs
 
-Testers
+Testeurs
 
 Traduction
 
-Nasa Public Relation
+Relations publiques de la NASA
 
-Nasa Technician
+Technicien de la NASA
 
-Duck Voices
+Voix des canards
 
-Executive Producers
+Producteurs exécutifs
 
-Director of Photography
+Directeur de la photographie
 
-Costumes Designer
+Concepteur de costumes
 
-Senior Visual Effects Supervisor
+Superviseur principal
+    des effets visuels
 
 Casting
 
-Unit Production Manager
+Directeur de production de l'unité
 
-First Assistant Director
+Premier assistant réalisateur
 
-Second Assistant Director
+Deuxième assistant réalisateur
 
-Second Second Assistant Director
+Deuxième deuxième
+    assistant réalisateur
 
-Associate Producers
+Producteurs associés
 
-Art Director
+Directeur artistique
 
-Video Graphics Supervisor
+Superviseur graphique vidéo
 
-Additional Casting
+Casting additionnel
 
-Chuck Noris
+Chuck Norris
 
-Production Accountant
+Comptable de production
 
-Additional Editing by
+Montage additionnel par
 
-First Assistant Editors
+Premiers monteurs adjoints
 
-Set Designers
+Concepteurs de décors
 
-Conceptual Artist
+Artiste conceptuel
 
-Storyboard Artists
+Artistes de storyboard
 
-Graphic Designer
+Graphiste
 
-Astronomical Visual Consultant
+Consultant visuel astronomique
 
-Art Departement Coordinator
+Coordinateur du département artistique
 
-Location Manager
+Directeur de location
 
-Assistant Location Manager
+Assistant directeur de location
 
-Set Decorator
+Décorateur de plateau
 
-Key Set Dresser
+Chef habilleur
 
-Property Master
+Régisseurs adjoints en chef
 
-Assistant Property Masters
+Maîtres des accessoires
 
-Additional Props. Set Dressing
-    and Wardrobe provided by
+Assistant-maîtres des accessoires
 
-Camera Operator
+Accessoires additionnels
 
-Steadicam Operators
+Opérateur de caméra
 
-First Assistant Camera
+Opérateurs Steadicam
 
-Second Assistant Camera
+Premier assistant caméra
 
-Second Second Assistant Camera
+Deuxième assistant caméra
 
-Libra Mount Cameraman
+Deuxième deuxième assistant caméra
 
-Aerial Coordinator
+Opérateur de caméra Libra Mount
 
-Second Unit Camera
+Coordinateur aérien
 
-Still Photographer
+Caméra de la deuxième unité
 
-Production Associate
+Photographe de plateau
 
-Assistant Production Associate
+Associé de production
 
-Script Supervisor
+Associé de production adjoint
 
-Second Unit Director
+Superviseur de script
 
-Second Assistant Directors
+Directeur de la deuxième unité
 
-Third Assistant Director
+Seconds assistants réalisateurs
 
-DGA Trainee
+Troisième assistant réalisateur
 
-Set Staff Assistants
+Stagiaire DGA
 
-Costumers
+Assistants de plateau
 
-Costume Maker
+Costumiers
 
-Production Sound Mixer
+Créateur de costumes
 
-Boom Operator
+Ingénieur du son de production
 
-Cable Person
+Perchman
 
-Lead Computer Graphics Designer
+Personne du câble
 
-Computer Graphics Designers
+Concepteur principal en infographie
 
-Computer Engineering Supervisor
+Concepteurs en infographie
 
-Video Engineer
+Superviseur en ingénierie informatique
 
-On-Line Editors
+Ingénieur vidéo
 
-Video Assist Operator
+Monteurs en ligne
 
-Radio Astronomy Consultant
+Opérateur d'assistance vidéo
 
-Mathematic Consultant
+Consultant en radioastronomie
 
-German Television Picture Consultant
+Consultant mathématique
 
-White House Consultant
+Consultant en images
+    de télévision allemande
 
-News Media Consultant
+Consultant à la Maison Blanche
 
-Special Effect Supervisor
+Consultant en médias d'information
 
-Special Effect Foreman
+Superviseur des effets spéciaux
+
+Contremaître des effets spéciaux
+
+Coordinateur constructeur
+
+Contremaître général
+
+Superviseur de la peinture
+
+Technicien principal
+    en éclairage de gréage
+
+Chef éclairagiste de gréage
+
+Assistant-comptables de production
+
+Associé de casting
+
+Consultant en dialecte
+
+Coordinateur de cascades
+
+Dresseur d'animaux
+
+Services artisanaux
+
+Projectionniste
+
+Monteur son supervisant
+
+Mixer de réenregistrement
+
+Monteurs d'effets sonores
+
+Premier assistant monteur son
+
+Deuxième assistant monteur son
+
+Deuxième deuxième assistant monteur son
+
+Technicien électrique
+
+Directeur électrique
+
+Premier assistant mécanique
+
+Cosmonaute russe
+
+Administrateur visuel spécial
+
+Superviseur en infographie
+
+Ingénieur Data
+
+Allumeur de canard de compagnie
+
+Simple Canard de compagnie
+
+Technicien d'enregistrement de film
+
+Illustrateur conceptuel
+
+Technicien pyrotechnique
+
+Artisan Poltronesofa
+
+Producteur de Thunderstone
+    Model Shop Scanning Supervisor
+
+Coordinateur des effets visuels
+
+Directeur principal de
+    séquence vidéo d'archives
+
+Artisan Poltron'e'sofa
+
+Producteur de Thunderstone Model Shop

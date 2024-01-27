@@ -2,14 +2,15 @@ import batFramework as bf
 from .customScene import CustomScene
 
 
-def load_credits(filepath: str):
+def load_credits():
+    filepath = bf.ResourceManager().get_path("assets/credits.txt")
+    res = []
     try:
         with open(filepath, 'r') as file:
-            res = file.readlines()
-            res = "".join(res)
+            res = [line for line in file.readlines() if line != "\n"]
         return res
     except FileNotFoundError:
-        return "Coin coin"
+        return res
 
 
 class CreditScene(CustomScene):
@@ -22,14 +23,16 @@ class CreditScene(CustomScene):
         # fond
         # self.root.add_child(bf.Image(""))
 
+        # ajout du debugger
         self.root.add_child(bf.Debugger())
 
         # écriture des crédits
-        credits = bf.Label(load_credits("data/assets/credits.txt")).set_text_size(28)
-        self.root.add_child(credits)
-        credits.set_center(*self.hud_camera.rect.midbottom)
-        credits.set_y(self.hud_camera.get_position()[1])
+        labels = [bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()) for line in load_credits()]
 
-    def update(self, dt):
+        container = bf.Container(bf.Column(40), *labels).add_constraints(bf.ConstraintCenterX())
+        self.root.add_child(container)
+
+    def do_update(self, dt):
         # défiler la caméra
-        self.hud_camera.move_by(0, 63*dt)
+        speed = 200
+        self.hud_camera.move_by(0, speed*dt)

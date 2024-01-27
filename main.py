@@ -18,5 +18,6 @@ bf.Manager(
     scenes.CreditScene(),
     scenes.TitleScene(),
     scenes.MainScene(),
-    scenes.DialogueScene()
+    scenes.DialogueScene()#,
+    #scenes.CreditScene()
 ).run()
