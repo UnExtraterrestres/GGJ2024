@@ -29,6 +29,8 @@ class CreditCreditScene(CustomScene):
         # fond
         # self.root.add_child(bf.Image(""))
 
+        self.hud_camera.zoom(0.5)
+
         # ajout du debugger
         self.root.add_child(bf.Debugger())
 
