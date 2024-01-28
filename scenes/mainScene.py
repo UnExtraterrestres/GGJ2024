@@ -32,11 +32,17 @@ class MainScene(bf.Scene):
         b = bf.Button("DIALOGUE",lambda : self.manager.set_scene("dialogue"))
         d = bf.BasicDebugger()
         self.root.add_child(b,d )
-        self.add_actions(bf.Action("EchapScene").add_key_control(pygame.K_ESCAPE))
+        self.level.set_tile(2,2,Tile().set_index(6,0).to_json())
+        self.add_actions(
+            bf.Action("EchapScene").add_key_control(pygame.K_ESCAPE),
+            bf.Action("DialogueScene").add_key_control(pygame.K_e)
+        )
         d.add_dynamic("state",lambda : self.player.state_machine.get_current_state().name)
     def do_update(self, dt):
         if self.actions.is_active("EchapScene"):
             self.manager.set_scene("pause")
+        if self.actions.is_active("DialogueScene"):
+            self.manager.set_scene("dialogue")
 
     def do_on_exit(self):
         self.player.actions.hard_reset()
