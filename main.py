@@ -25,4 +25,5 @@ m = bf.Manager(
     scenes.CreditCreditScene(),
     scenes.PauseScene()
 )
+
 m.run()

@@ -97,7 +97,7 @@ class EditorScene(CustomScene):
         self.set_clear_color(bf.color.RIVER_BLUE)
 
         self.current_tile = Tile().set_index(6,0)
-        self.level = Level()
+        self.level = Level(200,40)
         self.add_world_entity(self.level,self.current_tile)
         self.actions = bf.DirectionalKeyControls()
         self.add_actions(
@@ -108,7 +108,10 @@ class EditorScene(CustomScene):
             bf.Action("save").add_key_control(pygame.K_s),
             bf.Action("open").add_key_control(pygame.K_o),
             bf.Action("control").add_key_control(pygame.K_LCTRL,pygame.K_RCTRL).set_holding(),
+            bf.Action("more").add_key_control(pygame.K_z).set_holding(),
+            bf.Action("minus").add_key_control(pygame.K_s).set_holding()
         )
+        
         self.right_last_click : tuple[int,int] = (0,0)
         self.velocity = pygame.math.Vector2(0,0)
         self.camera_speed = 2
@@ -134,7 +137,10 @@ class EditorScene(CustomScene):
             self.velocity.y += self.camera_speed
         if self.actions.is_active("up"):
             self.velocity.y -= self.camera_speed
-
+        if self.actions.is_active("more"):
+            self.camera.zoom_by(0.2)
+        if self.actions.is_active("minus"):
+            self.camera.zoom_by(-2)
         self.camera.move_by(*self.velocity)
         self.current_tile.set_center(*self.camera.convert_screen_to_world(*pygame.mouse.get_pos()))
         
@@ -145,7 +151,7 @@ class EditorScene(CustomScene):
             t = self.level.get_tile(x,y)
 
             if t is not None and  t.to_json() == self.current_tile.to_json() : return 
-            
+            print(x,y)
             self.level.set_tile(x,y,self.current_tile.to_json())
 
         if self.actions.is_active("right_click"):

@@ -15,6 +15,9 @@ class Level(bf.Entity):
 
     def get_bounding_box(self):
         yield pygame.Rect(*self.rect.topleft,gconst.TILE_SIZE*self.width,gconst.TILE_SIZE*self.height)
+        for tile in self.tiles:
+            if tile and tile.has_tags("collider"):
+                yield tile.rect
 
     def get_drawn_tiles(self)->list:
         return [t for t in self.tiles if t is not None]
@@ -25,9 +28,8 @@ class Level(bf.Entity):
     def set_tile(self,x,y,tile_data:dict)->bool:
         if self.is_out_of_bounds(x,y):return False
         i = self.convert_from_grid(x,y)
-        tile =Tile().from_json(tile_data)
+        tile =Tile().from_json(tile_data).set_position(x*gconst.TILE_SIZE,y*gconst.TILE_SIZE)
         self.tiles[i] = tile
-        tile.set_position(x*gconst.TILE_SIZE,y*gconst.TILE_SIZE)
         return True
 
     def is_out_of_bounds(self,x,y)->bool:
