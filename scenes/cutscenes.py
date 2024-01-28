@@ -5,7 +5,7 @@ from .cutsceneBlocks import *
 class Test(bf.Cutscene):
     def __init__(self):
         super().__init__()
-        """
+
         self.add_blocks(
             bf.FunctionBlock(lambda : print("START")),
             bf.FunctionBlock(lambda : bf.CutsceneManager().disable_player_control()),
@@ -15,7 +15,6 @@ class Test(bf.Cutscene):
             bf.FunctionBlock(lambda : print("END")),
             bf.FunctionBlock(lambda : bf.CutsceneManager().manager.set_scene("main"))
         )
-        """
 
         """
         self.add_blocks(
@@ -44,6 +43,7 @@ class Test(bf.Cutscene):
         )
         """
 
+        """
         self.add_blocks(
             # Le joueur atteint un endroit clé avec le lutin parcer
             SayKey("pj_question_lutin_parcer", 1),
@@ -60,3 +60,4 @@ class Test(bf.Cutscene):
 
             bf.FunctionBlock(lambda: bf.CutsceneManager().manager.set_scene("main"))
         )
+        """

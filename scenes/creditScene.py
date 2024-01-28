@@ -65,5 +65,5 @@ class CreditScene(CustomScene):
             self.hud_camera.move_by(0,1)
         if self.actions.is_active("EchapScene"):
             self.manager.set_scene("title")
-        print(self.hud_camera.transpose(self.container.rect).bottom)
+        # print(self.hud_camera.transpose(self.container.rect).bottom)
 
