@@ -16,11 +16,6 @@ def load_credits():
         return res
 
 
-def author():
-
-
-    return potential_authors[randint(0, len(potential_authors))-1]
-
 
 class CreditScene(CustomScene):
 
@@ -32,13 +27,7 @@ class CreditScene(CustomScene):
         self.loaded = False
 
     def do_when_added(self):
-        # fond
-        # self.root.add_child(bf.Image(""))
-
-        # ajout du debugger
         self.root.add_child(bf.Debugger())
-
-        # écriture des crédits
         
         for line in self.loaded_credits[:10]:
 
@@ -57,7 +46,6 @@ class CreditScene(CustomScene):
 
     def create_labels(self):
         for line in self.loaded_credits[10:100]:
-
             self.container.add_child(
                 bf.Label(line).set_text_size(14).add_constraints(bf.ConstraintCenterX()),
                 bf.Label("Chuck Norris").set_padding((0, 0, 0, 30)).set_text_size(10).add_constraints(bf.ConstraintCenterX()).set_text_color(bf.color.RIVER_BLUE)
@@ -79,4 +67,5 @@ class CreditScene(CustomScene):
         self.hud_camera.move_by(0,1)
         if self.actions.is_active("EchapScene"):
             self.manager.set_scene("title")
+        print(self.root.children[1].get_position())
 
