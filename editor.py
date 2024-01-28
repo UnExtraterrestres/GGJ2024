@@ -138,9 +138,10 @@ class EditorScene(CustomScene):
         if self.actions.is_active("up"):
             self.velocity.y -= self.camera_speed
         if self.actions.is_active("more"):
-            self.camera.zoom_by(0.2)
+            self.camera.zoom_by(1)
         if self.actions.is_active("minus"):
-            self.camera.zoom_by(-2)
+            self.camera.zoom_by(-1)
+            print(self.camera.zoom_factor)
         self.camera.move_by(*self.velocity)
         self.current_tile.set_center(*self.camera.convert_screen_to_world(*pygame.mouse.get_pos()))
         

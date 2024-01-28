@@ -11,25 +11,28 @@ class Level(bf.Entity):
         if height is None : height = width
         self.height = height
         self.width = width
-        self.tiles = [None for _ in range(width*height)]
+        self.tiles = [[None for _ in range(width)] for _ in range(height) ]
+
+    def get_tiles(self):
+        for line in self.tiles : 
+            for tile in line : 
+                yield tile
 
     def get_bounding_box(self):
         yield pygame.Rect(*self.rect.topleft,gconst.TILE_SIZE*self.width,gconst.TILE_SIZE*self.height)
-        for tile in self.tiles:
+        for tile in self.get_tiles():
             if tile and tile.has_tags("collider"):
                 yield tile.rect
 
     def get_drawn_tiles(self)->list:
-        return [t for t in self.tiles if t is not None]
+        return [t for t in self.get_tiles() if t is not None]
 
-    def convert_from_grid(self,x,y)->int:
-        return y * self.height + x
+
 
     def set_tile(self,x,y,tile_data:dict)->bool:
         if self.is_out_of_bounds(x,y):return False
-        i = self.convert_from_grid(x,y)
         tile =Tile().from_json(tile_data).set_position(x*gconst.TILE_SIZE,y*gconst.TILE_SIZE)
-        self.tiles[i] = tile
+        self.tiles[y][x] = tile
         return True
 
     def is_out_of_bounds(self,x,y)->bool:
@@ -37,12 +40,12 @@ class Level(bf.Entity):
 
     def get_tile(self,x,y)->Tile|None:
         if self.is_out_of_bounds(x,y):return None
-        return self.tiles[self.convert_from_grid(x,y)]                
+        return self.tiles[y][x]                
 
 
     def remove_tile(self,x,y)->bool:
         if self.is_out_of_bounds(x,y):return False
-        self.tiles[self.convert_from_grid(x,y)] = None
+        self.tiles[y][x] = None
         return True
         
 
@@ -57,18 +60,18 @@ class Level(bf.Entity):
     def to_json(self)->dict:
         return {
             "size":(self.width,self.height),
-            "tiles":[t.to_json() if t is not None else None for t in self.tiles ]
+            "tiles":[[t.to_json() if t  else None for t in line  ] if not all(tile is None for tile in line) else None for line   in self.tiles  ]
         }
 
     def from_json(self,data:dict):
         self.width,self.height = data["size"]
-        self.tiles =[Tile().from_json(d) if d is not None else None for d in  data["tiles"]]
+        self.tiles =[[Tile().from_json(d) if d is not None else None for d in line] if line is not None else [None]*self.width for line in  data["tiles"]]
 
     def convert_world_to_grid(self,x,y)->tuple[int,int]:
         return int(x//gconst.TILE_SIZE),int(y//gconst.TILE_SIZE)
     
     def draw(self,camera):
-        l = [t.custom_draw(camera) for t in self.tiles if t and camera.intersects(t.rect)]
+        l = [t.custom_draw(camera) for t in self.get_tiles() if t and camera.intersects(t.rect)]
         camera.surface.fblits(l)
         return len(l)
                 
