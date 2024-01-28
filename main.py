@@ -16,13 +16,15 @@ bf.init(
 bf.Tileset.load_tileset("assets/tilesets/tileset.png", "main", scenes.gconst.TILE_SIZE)
 
 m = bf.Manager(
+    
     scenes.TitleScene(),
     scenes.CreditScene(),
     scenes.MainScene(),
     scenes.DialogueScene(),
     scenes.DialogueScene(),
     scenes.IntroScene(),
+    scenes.CreditCreditScene(),
     scenes.PauseScene()
 )
-# m.run()
-cProfile.run('m.run()',sort="time")
+m.run()
+#cProfile.run('m.run()', sort="time")

@@ -20,7 +20,6 @@ class Idle(bf.State):
 
     def on_enter(self):
         # self.parent_entity.set_animState("idle")
-        print("IDLE")
         pass
 
     def update(self, dt):
@@ -47,7 +46,6 @@ class Run(bf.State):
 
     def on_enter(self):
         # self.parent_entity.set_animState("run")
-        print("RUN")
         pass
 
     def update(self, dt):
@@ -75,7 +73,6 @@ class Fall(bf.State):
 
     def on_enter(self):
         # self.parent_entity.set_animState("fall")
-        print("FALL")
         pass
 
     def update(self, dt):
@@ -95,7 +92,6 @@ class Jump(bf.State):
         self._jumped = False
 
     def on_enter(self):
-        print("JUMP")
         # self.parent_entity.set_animState("jump")
         self._jumped = False
 
