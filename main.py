@@ -9,13 +9,14 @@ bf.init(
     default_text_size=16,
     resource_path='data',
     default_font="fonts/p2p.ttf",
-    fps_limit=0,
+    fps_limit=60,
     window_title="Coin Coin"
     )
 
 bf.Tileset.load_tileset("assets/tilesets/tileset.png", "main", scenes.gconst.TILE_SIZE)
 
 m = bf.Manager(
+    scenes.CreditCreditScene(),
     scenes.TitleScene(),
     scenes.CreditScene(),
     scenes.MainScene(),
