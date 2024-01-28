@@ -149,7 +149,7 @@ class Player(bf.AnimatedSprite):
 
         level = self.parent_scene.get_sharedVar("level")
 
-        near_tiles = [t for t in level.get_neighboring(*level.convert_world_to_grid(*self.rect.center)) if t]
+        near_tiles = [t for t in level.get_neighboring(*level.convert_world_to_grid(*self.rect.center)) if t and t.has_tags("collider")]
         near_rects = [t.rect for t in near_tiles]
         self.rect.y += self.velocity.y *dt
         index = self.rect.collidelist(near_rects)
@@ -165,7 +165,7 @@ class Player(bf.AnimatedSprite):
                 self.velocity.y= 0
 
         
-        near_tiles = [t for t in level.get_neighboring(*level.convert_world_to_grid(*self.rect.center)) if t]
+        near_tiles = [t for t in level.get_neighboring(*level.convert_world_to_grid(*self.rect.center)) if t and t.has_tags("collider")]
         near_rects = [t.rect for t in near_tiles]
         self.rect.x += self.velocity.x *dt
         index = self.rect.collidelist(near_rects)

@@ -15,6 +15,9 @@ class Level(bf.Entity):
 
     def get_bounding_box(self):
         yield pygame.Rect(*self.rect.topleft,gconst.TILE_SIZE*self.width,gconst.TILE_SIZE*self.height)
+        for tile in self.tiles:
+            if tile and tile.has_tags("collider"):
+                yield tile.rect
 
     def get_drawn_tiles(self)->list:
         return [t for t in self.tiles if t is not None]
