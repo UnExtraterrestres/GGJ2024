@@ -2,6 +2,10 @@ import batFramework as bf
 import pygame
 from .player import Player
 from .level import Level,Tile
+from .npc import NPC
+from .cutscenes import *
+
+
 
 
 class MainScene(bf.Scene):
@@ -9,14 +13,16 @@ class MainScene(bf.Scene):
     def __init__(self):
         super().__init__("main")
         self.set_clear_color(bf.color.RIVER_BLUE)
-
+        self.npc_list = [
+            NPC().set_position(128,308).set_cutscene(Test())
+        ]
 
 
     def do_when_added(self):
         self.level = Level()
         self.level.from_json(bf.ResourceManager().load_json_from_file("assets/level.json"))
         self.player = Player().set_center(*self.camera.get_center())
-        self.add_world_entity(self.level,self.player)
+        self.add_world_entity(self.level,*self.npc_list,self.player)
         self.camera.set_follow_point(lambda : self.player.rect.move(0,-bf.const.RESOLUTION[1]*0.2).center)
 
         self.set_sharedVar("level",self.level)

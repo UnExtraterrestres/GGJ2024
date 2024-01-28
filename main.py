@@ -24,5 +24,5 @@ m = bf.Manager(
     scenes.IntroScene(),
     scenes.PauseScene()
 )
-# m.run()
-cProfile.run('m.run()',sort="time")
+m.run()
+# cProfile.run('m.run()',sort="time")
