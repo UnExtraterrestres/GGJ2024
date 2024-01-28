@@ -100,6 +100,7 @@ class EditorScene(CustomScene):
         self.level = Level(200,40)
         self.add_world_entity(self.level,self.current_tile)
         self.actions = bf.DirectionalKeyControls()
+        self.camera.set_min_zoom(0.1)
         self.add_actions(
             bf.Action("pick").add_key_control(pygame.K_p),
             bf.Action("click").add_mouse_control(1).set_holding(),
@@ -109,7 +110,7 @@ class EditorScene(CustomScene):
             bf.Action("open").add_key_control(pygame.K_o),
             bf.Action("control").add_key_control(pygame.K_LCTRL,pygame.K_RCTRL).set_holding(),
             bf.Action("more").add_key_control(pygame.K_z).set_holding(),
-            bf.Action("minus").add_key_control(pygame.K_s).set_holding()
+            bf.Action("minus").add_key_control(pygame.K_a).set_holding()
         )
         
         self.right_last_click : tuple[int,int] = (0,0)
@@ -138,9 +139,9 @@ class EditorScene(CustomScene):
         if self.actions.is_active("up"):
             self.velocity.y -= self.camera_speed
         if self.actions.is_active("more"):
-            self.camera.zoom_by(1)
+            self.camera.zoom_by(0.1)
         if self.actions.is_active("minus"):
-            self.camera.zoom_by(-1)
+            self.camera.zoom_by(-0.1)
             print(self.camera.zoom_factor)
         self.camera.move_by(*self.velocity)
         self.current_tile.set_center(*self.camera.convert_screen_to_world(*pygame.mouse.get_pos()))
