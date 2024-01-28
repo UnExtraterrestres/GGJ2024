@@ -1,5 +1,37 @@
 {
-	"test":"This is an example",
-	"player_intro1":"",
-	"lutin_intro": ""y
+
+	"29846826984623": "Commentaire : DIALOGUES DE TESTS",
+	"test":"Chuck Norris ne ment pas. C'est la vérité qui se trompe.",
+	"pot_aux_roses": "Je dois te dévoiler le pot aux roses...",
+	"tenir_a_un_fil": "Ne tient qu’à un fil.",
+	"tater_terrain": "Tâter le terrain",
+	"bout_du_tunnel": "Au bout du tunnel.",
+
+	"3298432983653": "Commentaire : OBJECTIF DONNE PAR LE FRERE",
+	"objectif_pj_bonjour": "Mon frère, ta santé ne tient plus qu'à un fil, comment ça va ?",
+	"objectif_fr_demande1": "Je me presse le citron depuis un moment. Mais tu tombes à pic !",
+	"objectif_fr_demande2": "Au bout du tunnel, une légende raconte qu'il existe un remède, une plante.",
+	"objectif_fr_demande3": "Cette plante est notre dernière chance de résilience. Tu te sens capable de gravir monts et vallées pour nous sauver d'une mauvaise chute ?",
+	"objectif_pj_refus": "Ce n'est qu'une légende.",
+	"objectif_fr_menace1": "Balivernes ! C'est bien plus que ça. C'est notre dernier espoir. Va, ne tâte pas le terrain, sinon je casserai ta collection de canards.",
+	"objectif_pj_accepte1": "Nous sommes dans une impasse... Mes canards méritent mieux...",
+	"objectif_fr_menace2": "La plante et toi êtes notre dernier espoir. Fais-le pour moi, pour tes canards.",
+	"objectif_pj_accepte2": "Très bien, j'irai.",
+
+	"3239486324": "Commentaire : RENCONTRE AVEC LE LUTIN PARCER",
+	"lutin_bonjour":  "Salut à toi, aventurier ! On dirait que la chance t'a souri aujourd'hui, car tu viens de croiser le lutin parcer le plus malicieux de tous les temps !",
+	"pj_salutation":  "Ah, euh... salut. Qui es-tu ?",
+	"lutin_proposition":  "Moi ? Oh, juste un lutin parcer qui a décidé de mettre son talent au service de héros comme toi ! Et si on faisait équipe ?",
+	"pj_accueil_lutin":  "Euh, d'accord... résoudre des énigmes, pourquoi pas ? Mais pas trop de parsing, d'accord ?",
+	"lutin_intro_parser":  "Parfait ! Désormais, je serai ton lutin parser personnel. Prêt pour cette nouvelle aventure ?",
+
+	"324097150074": "Commentaire : DIALOGUES DU TWIST",
+	"pj_question_lutin_parcer": "Quoi ? Qu'est-ce qui se passe ? Où est la plante ?",
+	"lutin_parcer_explication": "La plante dont tu as entendu parler n'est pas une herbe médicinale, mais une mauvaise traduction.",
+	"lutin_parcer_explication2": "Le nom de ma propre espèce : les lutins parsers.",
+	"pj_realisation": "Attends, tu veux dire que la plante n'existe pas vraiment ? Tout cela était basé sur un malentendu ?",
+	"lutin_parcer_encouragement": "Exactement. La vraie force était en toi et en ta capacité à surmonter les blagues nulles.",
+	"pj_accepte_revelation": "D'accord, je suppose que je devrais continuer. Même si tout cela est un peu fou, mes canards méritent bien ça.",
+	"pj_vraie_solution": "Que faire ? Alors je te mange ?"
+
 }
