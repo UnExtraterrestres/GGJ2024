@@ -14,7 +14,6 @@ def load_credits():
     except FileNotFoundError:
         return res
 
-
 class CreditScene(CustomScene):
 
     def __init__(self):
@@ -45,7 +44,6 @@ class CreditScene(CustomScene):
         self.add_actions(bf.Action("EchapScene").add_key_control(pygame.K_ESCAPE))
         self.timer = bf.Timer(0.9, loop=True, end_callback=lambda:  self.container.children.pop(0) if self.container.children else None).start()
         self.timer.pause()
-
     def create_labels(self):
         for line in self.loaded_credits[10:100]:
 
@@ -60,7 +58,6 @@ class CreditScene(CustomScene):
             thread = threading.Thread(target=lambda: self.create_labels())
             thread.start()
         pass
-
     def do_on_exit(self):
         self.timer.pause()
 
