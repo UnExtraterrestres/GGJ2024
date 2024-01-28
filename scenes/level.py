@@ -28,9 +28,8 @@ class Level(bf.Entity):
     def set_tile(self,x,y,tile_data:dict)->bool:
         if self.is_out_of_bounds(x,y):return False
         i = self.convert_from_grid(x,y)
-        tile =Tile().from_json(tile_data)
+        tile =Tile().from_json(tile_data).set_position(x*gconst.TILE_SIZE,y*gconst.TILE_SIZE)
         self.tiles[i] = tile
-        tile.set_position(x*gconst.TILE_SIZE,y*gconst.TILE_SIZE)
         return True
 
     def is_out_of_bounds(self,x,y)->bool:
