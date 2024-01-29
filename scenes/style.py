@@ -6,7 +6,7 @@ def apply_common(w:bf.Widget):
 
 def style(entity):
     try:
-        entity.set_padding((8,8))
+        entity.set_padding((18,12))
         if not isinstance(entity,bf.Indicator) : 
             entity.set_color(bf.color.DARK_BLUE)
             entity.set_outline_color(bf.color.WASHED_BLUE)

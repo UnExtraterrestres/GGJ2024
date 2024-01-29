@@ -15,10 +15,15 @@ bf.init(
 
 bf.Tileset.load_tileset("assets/tilesets/tileset.png", "main", scenes.gconst.TILE_SIZE)
 
+bf.AudioManager().load_music("credits","credits.wav")
+bf.AudioManager().load_music("witch","witch.wav")
+bf.AudioManager().load_music("lutin","lutin.wav")
+
 m = bf.Manager(
     scenes.TitleScene(),
     scenes.CreditScene(),
-    scenes.MainScene(),
+    # scenes.MainScene(),
+    scenes.MusicScene(),
     scenes.DialogueScene(),
     scenes.DialogueScene(),
     scenes.IntroScene(),

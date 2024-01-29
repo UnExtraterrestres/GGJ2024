@@ -73,3 +73,14 @@ class Twist(bf.Cutscene):
 
             bf.FunctionBlock(lambda: bf.CutsceneManager().manager.set_scene("main"))
         )
+
+class Music(bf.Cutscene):
+    def __init__(self,name:str):
+        self.add_blocks(
+
+            bf.FunctionBlock(lambda: bf.CutsceneManager().manager.set_scene("dialogue")),
+            Say(name.split('.')[0],0.5),
+            
+
+            bf.FunctionBlock(lambda: bf.CutsceneManager().manager.set_scene("main"))
+        )

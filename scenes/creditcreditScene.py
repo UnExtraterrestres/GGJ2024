@@ -69,11 +69,11 @@ class CreditCreditScene(CustomScene):
         self.timer.pause()
 
     def do_update(self, dt):
-        if self.hud_camera.transpose(self.container.rect).bottom > 32:
+        if self.hud_camera.transpose(self.container.rect).bottom > 40:
             self.hud_camera.move_by(0,1)
 
         #print(self.hud_camera.rect)
         if self.actions.is_active("EchapScene"):
             self.manager.set_scene("title")
 
-        print(self.hud_camera.transpose(self.container.rect).bottom)
+        # print(self.hud_camera.transpose(self.container.rect).bottom)
