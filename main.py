@@ -22,7 +22,7 @@ bf.AudioManager().load_music("lutin","lutin.wav")
 m = bf.Manager(
     scenes.TitleScene(),
     scenes.CreditScene(),
-    # scenes.MainScene(),
+    scenes.MainScene(),
     scenes.MusicScene(),
     scenes.DialogueScene(),
     scenes.DialogueScene(),

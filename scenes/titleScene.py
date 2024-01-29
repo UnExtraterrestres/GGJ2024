@@ -21,7 +21,7 @@ class TitleScene(CustomScene):
         container.set_size(100,60).set_padding(10).set_y(self.hud_camera.get_center()[1]+80)
         container.add_constraints(bf.ConstraintCenterX())
         container.add_child(
-            bf.Button("Music",lambda : self.manager.set_scene("music")),
+            bf.Button("Music",lambda : self.manager.set_scene("main")),
             bf.Button("Credits", lambda : self.manager.set_scene("credits")),
             bf.Button("Quit", self.manager.stop)
         )

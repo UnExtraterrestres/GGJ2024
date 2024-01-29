@@ -3,6 +3,12 @@ from .customScene import CustomScene
 from .cutscenes import *
 
 
+def stylize_label(entity):
+    entity.set_color(bf.color.DARK_BLUE)
+    entity.set_outline_color(bf.color.WASHED_BLUE)
+    entity.set_outline_width(3).set_border_radius((0,0,20,0))
+    entity.set_text_color(bf.color.CLOUD_WHITE)
+
 class DialogueScene(CustomScene):
 
     def __init__(self):
@@ -19,11 +25,7 @@ class DialogueScene(CustomScene):
             bf.ConstraintPercentageHeight(0.3),
         )
 
-        def stylize_label(entity):
-            entity.set_color(bf.color.DARK_BLUE)
-            entity.set_outline_color(bf.color.WASHED_BLUE)
-            entity.set_outline_width(3).set_border_radius((0,0,20,0))
-            entity.set_text_color(bf.color.CLOUD_WHITE)
+        
 
         stylize_label(self.dialogue_box)
         self.dialogue_box.set_padding((20,20))
@@ -35,14 +37,16 @@ class DialogueScene(CustomScene):
         self.name_tag.set_border_radius((0,4,4,0)).set_padding((20,10))
         self.name_tag.set_position(*self.dialogue_box.rect.move(0,-self.name_tag.rect.h+3).topleft)  
 
-
+        
 
     def do_when_added(self):
         b = bf.Button("MAIN",lambda : self.manager.set_scene("main"))
         b.add_constraints(bf.ConstraintCenter())
         self.set_sharedVar("dialogues",bf.ResourceManager().load_json_from_file("assets/dialogues.json"))
-        b2 = bf.Button("PLAY",lambda : bf.CutsceneManager().play(Test()))
-        b2.add_constraints(bf.ConstraintCenterY(),bf.ConstraintAnchorRight())
+        b2 = bf.Button(">",lambda : bf.CutsceneManager().play(Test()))
+        stylize_label(b2)
+        b2.set_border_radius((10,0,10,0)).set_padding((10,15))
+        b2.set_position(575,435)
         self.root.add_child(b)
         self.root.add_child(b2)
         self.root.add_child(bf.BasicDebugger())
